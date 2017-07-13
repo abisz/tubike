@@ -1,0 +1,17 @@
+{
+  "name": "tubike",
+  "version": "0.0.0",
+  "description": "interactive map of berlin with information for bikers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "html",
+    "map",
+    "location",
+    "bike"
+  ],
+  "author": "Simon Reinsperger",
+  "license": "MIT"
+}
