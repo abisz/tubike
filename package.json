@@ -14,7 +14,8 @@
     "watch:html": "onchange 'index.html' -- npm run build:html",
     "watch:css": "onchange 'styles.css' -- npm run build:css",
     "watch:js": "onchange 'script.js' -- npm run build:js",
-    "start": "npm run build && npm run watch"
+    "start": "npm run build && npm run watch",
+    "deploy": "npm run build && gh-pages -d public"
   },
   "keywords": [
     "html",
@@ -31,6 +32,7 @@
     "babel-preset-env": "^1.6.0",
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
+    "gh-pages": "^1.0.0",
     "npm-run-all": "^4.0.2",
     "onchange": "^3.2.1"
   }
