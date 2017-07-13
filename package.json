@@ -4,7 +4,15 @@
   "description": "interactive map of berlin with information for bikers",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run clean && npm-run-all build:*",
+    "build:html": "cp index.html public/index.html",
+    "build:js": "browserify script.js -o ./public/script.js -t [ babelify --presets env ]",
+    "build:vendor": "cp -a node_modules/leaflet/dist public/vendor",
+    "clean": "rm -rf public && mkdir public",
+    "watch": "npm-run-all --parallel watch:*",
+    "watch:html": "onchange 'index.html' -- npm run build:html",
+    "watch:js": "onchange 'script.js' -- npm run build:js",
+    "start": "npm run build && npm run watch"
   },
   "keywords": [
     "html",
@@ -16,5 +24,12 @@
   "license": "MIT",
   "dependencies": {
     "leaflet": "^1.1.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
+    "npm-run-all": "^4.0.2",
+    "onchange": "^3.2.1"
   }
 }
